@@ -1,0 +1,37 @@
+/* Hoja de estilo de Ej_2_Curriculum*/
+body{
+    font-family: calibri;
+    background-color: #ffe4d9;
+}
+#foto{
+    float:right;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+h3{
+    font-weight: bold;
+    padding:5px;
+    margin-top: 20px;
+}
+
+li{
+    list-style-type: round;
+}
+
+img{
+    width: 130px;
+    float: right;
+    margin-right: 40px;
+}
+
+div{
+    padding:5px;
+    margin-top: 20px;
+}

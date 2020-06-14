@@ -1,0 +1,49 @@
+/* pagina de estilos del aficiones.html */
+body{
+    font-family: calibri;
+    background-color: #ffe4d9;
+}
+#historia{
+    width: 100%;
+    clear: both;
+}
+div{
+    width: 75%;
+    padding: 0px;
+    float: left;
+}
+#f1{
+    width: 200px;
+    height: 300px;
+    float: left;
+    border: solid black 1px;
+}
+#d1{
+    border: solid black 1px;
+    float: left;
+}
+#d1, #d3{
+    float: left;
+    border-style: solid;
+    clear: both;
+    
+}
+#d2,#d4{
+    
+    float: right;
+    border-style: solid;
+    clear: both;
+}
+img{
+    width: 200px;
+    height: 300px;
+}
+img:hover{
+    opacity: 20%;
+} 
+h3{
+    text-align: center;
+}
+p{
+    padding: 0px 20px 20px 20px;
+}

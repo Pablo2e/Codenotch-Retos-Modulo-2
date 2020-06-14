@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/Professional.js" language="javascript" type="text/javascript"></script>
+    <script src="./js/Movie.js" language="javascript" type="text/javascript"></script>
+    <script src="./js/Imdb.js" language="javascript" type="text/javascript"></script>
+    <script src="scripts.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<!-- barra de navegación -->
+    <ul class="nav bg-dark">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">SUBIR PELICULA</a>
+        </li>
+    </ul><br><br>
+<!-- Contenedor con el logo --> 
+    <div class="container text-white">
+        <div class="card border-0 shadow my-5 bg-dark ">
+               <div class="card-body p-5">
+                    <h1><b>UP/DOWN</b></h1>
+                <p>Base de datos colaborativa de peliculas copyleft.</p>
+            </div>
+        </div>
+    </div>
+<!-- Separador --> 
+    </div><div class="col-lg-4"></div></div><br><br>
+<!-- Tarjetas --> 
+    <div class="row">
+        <div class="col-sm-6 col-md-3 col-lg-3">   
+            <div class="card">
+                <img src="img/seven.jpg" class="card-img-top embed-responsive-item" alt="Seven">
+                <div class="card-body">
+                    <h4 class="card-title">Seven</h4>
+                    <button type="button" onclick="imprimirPelicula(0)" class="btn btn-primary btn-block" data-toggle="modal" data-target="#basicExampleModal" id="seven">
+                        Datos de la pelicula
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3">   
+            <div class="card"  >
+                <img src="img/silence.jpg" class="card-img-top" alt="El silencio de los corderos">
+                <div class="card-body">
+                    <h4 class="card-title">El silencio de los corderos</h4>
+                    <!-- <button class="btn btn-primary" type="submit" id="silence" onclick="datosSil()">+ Datos</button> -->
+                    <button type="button" onclick="imprimirPelicula(1)" class="btn btn-primary btn-block" data-toggle="modal" data-target="#basicExampleModal" id="bla">
+                        Datos de la pelicula
+                    </button> 
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3">   
+            <div class="card"  >
+                <img src="img/matilda.jpg" class="card-img-top" alt="Matilda">
+                <div class="card-body">
+                    <h4 class="card-title">Matilda</h4>
+                    <!-- <button class="btn btn-primary" type="submit" id="matilda" onclick="datosMat()">+ Datos</button> -->
+                    <button type="button" onclick="imprimirPelicula(2)" class="btn btn-primary btn-block" data-toggle="modal" data-target="#basicExampleModal" id="mat">
+                        Datos de la pelicula
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+<!-- Contenedor completa los datos, agrega, confirma y sube -->    
+    <div class="container-flex text-white text-center">
+        <div class="card border-0 shadow my-5 bg-dark ">
+            <div class="card-body p-5">
+                <H3>Completa todos los datos que tengas, agrega y luego confirma y sube</H3>
+            </div>
+        </div>
+    </div>
+<!-- Formularios --> 
+    <div class="row text-center">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <form class="form-signin">
+                <h4><b>Sube una pelicula</b></h4>
+                <input type="text" id="inputTitulo" class="form-control" placeholder="Titulo de la pelicula" autofocus>
+                <input type="text" id="inputAnio" class="form-control" placeholder="Año de lanzamiento" autofocus>
+                <input type="text" id="inputNacionalidad" class="form-control" placeholder="Nacionalidad" autofocus>
+                <input type="text" id="inputGenero" class="form-control" placeholder="Genero" autofocus>
+                <input type="text" id="inputFoto" class="form-control" placeholder="Link a la foto de caratula" autofocus>
+                <input type="text" id="inputIdioma" class="form-control" placeholder="Idioma" autofocus>
+                <input type="text" id="inputPlataforma" class="form-control" placeholder="Plataforma" autofocus>
+                <input type="text" id="inputIsMcu" class="form-control" placeholder="¿Es del Universo Marvel? Si o No" autofocus>
+                <input type="text" id="inputNombreProta" class="form-control" placeholder="Nombre del/la protagonista" autofocus>
+                <input type="text" id="inputProductor" class="form-control" placeholder="Nombre del productor" autofocus>
+                <input type="text" id="inputDistribuidor" class="form-control" placeholder="Distribuidora" autofocus>
+                <button type="button" onclick="agregarPeli()" class="btn btn-dark btn-block" data-toggle="modal" data-target="#basicExampleModal" id="agPeli">Agregar pelicula</button>
+            </form>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <form class="form-signin">
+                <h4><b>Datos Actor/Actriz</b></h4>
+                <input type="text" id="inputName" class="form-control" placeholder="Nombre actor/actriz" autofocus>
+                <input type="text" id="inputEdad" class="form-control" placeholder="Edad" autofocus>
+                <input type="text" id="inputGeneroA" class="form-control" placeholder="Genero" autofocus>
+                <input type="text" id="inputPeso" class="form-control" placeholder="Peso" autofocus>
+                <input type="text" id="inputAltura" class="form-control" placeholder="Altura" autofocus>
+                <input type="text" id="inputPelo" class="form-control" placeholder="Color de pelo" autofocus>
+                <input type="text" id="inputOjos" class="form-control" placeholder="Color de ojos" autofocus>
+                <input type="text" id="inputRaza" class="form-control" placeholder="Raza" autofocus>
+                <input type="text" id="inputRetirado" class="form-control" placeholder="¿Esta retirado/a? Si o No" autofocus>
+                <input type="text" id="inputNacionalidadA" class="form-control" placeholder="Nacionalidad" autofocus>
+                <input type="text" id="inputOscar" class="form-control" placeholder="Oscars ganados" autofocus>
+                <input type="text" id="inputProfesion" class="form-control" placeholder="Profesión" autofocus>
+                <input type="text" id="inputFotoA" class="form-control" placeholder="Link a su foto de cara" autofocus>
+                <button type="button" onclick="agregarActor()" class="btn btn-dark btn-block" data-toggle="modal" data-target="#basicExampleModal" id="agAct">Agregar Actor/actriz</button>
+            </form>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <form class="form-signin">
+                <h4><b>Datos del Director</b></h4>
+                <input type="text" id="inputNameD" class="form-control" placeholder="Nombre actor/actriz" autofocus>
+                <input type="text" id="inputEdadD" class="form-control" placeholder="Edad" autofocus>
+                <input type="text" id="inputGeneroD" class="form-control" placeholder="Genero" autofocus>
+                <input type="text" id="inputPesoD" class="form-control" placeholder="Peso" autofocus>
+                <input type="text" id="inputAlturaD" class="form-control" placeholder="Altura" autofocus>
+                <input type="text" id="inputPeloD" class="form-control" placeholder="Color de pelo" autofocus>
+                <input type="text" id="inputOjosD" class="form-control" placeholder="Color de ojos" autofocus>
+                <input type="text" id="inputRazaD" class="form-control" placeholder="Raza" autofocus>
+                <input type="text" id="inputRetiradoD" class="form-control" placeholder="¿Esta retirado/a? Si o No" autofocus>
+                <input type="text" id="inputNacionalidadD" class="form-control" placeholder="Nacionalidad" autofocus>
+                <input type="text" id="inputOscarD" class="form-control" placeholder="Oscars ganados" autofocus>
+                <input type="text" id="inputProfesionD" class="form-control" placeholder="Profesión" autofocus>
+                <input type="text" id="inputFotoD" class="form-control" placeholder="Link a su foto de cara" autofocus>
+                <button type="button"  onclick="agregarDirector()" class="btn btn-dark btn-block" data-toggle="modal" data-target="#basicExampleModal" id="agDir">Agregar Director/a</button>
+             </form>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <form class="form-signin">
+                <h4><b>Datos del Productor</b></h4>
+                <input type="text" id="inputNameP" class="form-control" placeholder="Nombre actor/actriz" autofocus>
+                <input type="text" id="inputEdadP" class="form-control" placeholder="Edad" autofocus>
+                <input type="text" id="inputGeneroP" class="form-control" placeholder="Genero" autofocus>
+                <input type="text" id="inputPesoP" class="form-control" placeholder="Peso" autofocus>
+                <input type="text" id="inputAlturaP" class="form-control" placeholder="Altura" autofocus>
+                <input type="text" id="inputPeloP" class="form-control" placeholder="Color de pelo" autofocus>
+                <input type="text" id="inputOjosP" class="form-control" placeholder="Color de ojos" autofocus>
+                <input type="text" id="inputRazaP" class="form-control" placeholder="Raza" autofocus>
+                <input type="text" id="inputRetiradoP" class="form-control" placeholder="¿Esta retirado/a? Si o No" autofocus>
+                <input type="text" id="inputNacionalidadP" class="form-control" placeholder="Nacionalidad" autofocus>
+                <input type="text" id="inputOscarP" class="form-control" placeholder="Oscars ganados" autofocus>
+                <input type="text" id="inputProfesionP" class="form-control" placeholder="Profesión" autofocus>
+                <input type="text" id="inputFotoP" class="form-control" placeholder="Link a su foto de cara" autofocus>
+                <button type="button"  onclick="agregarProductor()" class="btn btn-dark btn-block" data-toggle="modal" data-target="#basicExampleModal" id="agPro">Agregar Productor/a</button>
+             </form>
+        </div>
+    </div><br>
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">DATOS</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" id="myDiv2">
+     <p>Hola</p>
+   </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Boton confirmar datos y subir -->    
+<button class="btn-block btn-dark" id="confirmar">CONFIRMAR DATOS Y SUBIR</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

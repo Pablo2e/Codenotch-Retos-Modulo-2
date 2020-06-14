@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Julia Roberts",
+    "age": 40,
+    "genre": "female",
+    "weight": 60,
+    "height": 170,
+    "hairColor": "brown",
+    "eyeColor": "blue",
+    "race": "caucasian",
+    "isRetired": "no",
+    "nationality": "USA",
+    "oscarsNumber": 2,
+    "profession": "actress",
+    "photo": "http//:foto.jpg"
+  },
+  {
+    "name": "Halle Berry",
+    "age": 30,
+    "genre": "female",
+    "weight": 57,
+    "height": 174,
+    "hairColor": "black",
+    "eyeColor": "brown",
+    "race": "african-american",
+    "isRetired": "yes",
+    "nationality": "Canadian",
+    "oscarsNumber": 2,
+    "profession": "http//:foto.jpg",
+    "photo": "http//:foto.jpg"
+  },
+  {
+    "name": "Paul Williams",
+    "age": 30,
+    "genre": "male",
+    "weight": 80,
+    "height": 170,
+    "hairColor": "brown",
+    "eyeColor": "blue",
+    "race": "caucasian",
+    "isRetired": "yes",
+    "nationality": "USA",
+    "oscarsNumber": 2,
+    "profession": "actor",
+    "photo": "http//:foto.jpg"
+  },
+  {
+    "name": "Mario Guevara",
+    "age": 30,
+    "genre": "male",
+    "weight": 80,
+    "height": 180,
+    "hairColor": "brown",
+    "eyeColor": "blue",
+    "race": "hispanic",
+    "isRetired": "yes",
+    "nationality": "Mexican",
+    "oscarsNumber": 2,
+    "profession": "actor",
+    "photo": "http//:foto.jpg"
+  },
+  {
+    "name": "Xing Xung",
+    "age": 25,
+    "genre": "male",
+    "weight": 80,
+    "height": 180,
+    "hairColor": "black",
+    "eyeColor": "brown",
+    "race": "asian",
+    "isRetired": "yes",
+    "nationality": "China",
+    "oscarsNumber": 0,
+    "profession": "actor",
+    "photo": "http//:foto.jpg"
+  },
+
+  {
+    "title": "Seven",
+    "releaseYear": 1995,
+    "nationality": "EE.UU",
+    "actors":[{
+        "name": "Mario Guevara",
+        "age": 30,
+        "genre": "male",
+        "weight": 80,
+        "height": 180,
+        "hairColor": "brown",
+        "eyeColor": "blue",
+        "race": "hispanic",
+        "isRetired": "yes",
+        "nationality": "Mexican",
+        "oscarsNumber": 2,
+        "profession": "actor",
+        "photo": "http//:foto.jpg"
+      },
+      {
+        "name": "Xing Xung",
+        "age": 25,
+        "genre": "male",
+        "weight": 80,
+        "height": 180,
+        "hairColor": "black",
+        "eyeColor": "brown",
+        "race": "asian",
+        "isRetired": "yes",
+        "nationality": "China",
+        "oscarsNumber": 0,
+        "profession": "actor",
+        "photo": "http//:foto.jpg"
+      }],
+    "genre": "Crime"
+},
+  {
+      "title": "EL silencio de los corderos",
+      "releaseYear": 1991,
+      "nationality": "EE.UU",
+      "genre": "Thriler"
+  },
+  {
+      "title": "Matilda",
+      "releaseYear": 1998,
+      "nationality": "EE.UU",
+      "genre": "Infantil"
+  }
+]

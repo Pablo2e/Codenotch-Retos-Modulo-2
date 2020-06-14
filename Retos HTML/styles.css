@@ -1,0 +1,43 @@
+body{
+    font-family: calibri;
+    background-color: black;
+}
+
+#d1{
+    float: left;
+}
+#d2{
+    float: left;
+}
+
+#d3{
+    float: left;
+}
+
+p{
+    color:white;
+}
+.item{
+    color:red;
+}
+#primero{
+    color:green
+}
+#segundo{
+    color:yellow
+}
+#tercero{
+    color:orange
+}
+
+li{
+    color:blue;
+    font-weight: bold;
+    
+}
+
+div{
+    width: 200;
+    padding:5px;
+    margin-top: 20px;
+}

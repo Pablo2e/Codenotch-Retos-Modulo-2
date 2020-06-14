@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: calibri;
+}
+.menuH a{
+    background-color:black;
+    color: white;
+    text-decoration: none;
+    float:left;
+    width: 20%;
+    text-align: center;
+    padding: 10px 0PX;
+}
+.menuH a:hover{
+    background-color: white;
+    color: black;
+ }
+.menuF a{
+    background-color:gray;
+    color: white;
+    text-decoration: none;
+    float:left;
+    width: 33.33%;
+    text-align: center;
+    padding: 10px 0PX;
+}
+.menuF a:hover{
+    background-color: white;
+    color: black;
+ }
+.conten{
+    background-image: url(img/playa.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px; 
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.conten:before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0.7;
+}
+.conten button{
+    width: 100%;
+    position: relative;
+    color:black;
+    border: 2px solid lightblue;
+    border-radius: 4px;
+    width: 100%;
+}
+.conten h1, h4{
+    position: relative;
+    color: white;
+}
+.conten input, textarea{
+    border: 2px solid lightblue;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+    color: black;
+}
+label{
+    margin-top: 10px;
+    position: relative;
+    color: white;
+}
+.conten h1{
+    font-size: 60px;
+    text-align: center;
+}
+.conten h4, p{
+    font-size: 25px;
+    text-align: center;
+}
+.conten p{
+    font-size: 22.5px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+footer{
+    background-color: gray;
+    color: white;
+    font-size: 10px;
+    text-align: left;
+}
+#t{
+    opacity: 0%;
+}

@@ -1,0 +1,20 @@
+body{
+    font-family: calibri;
+    color:black;
+}
+a{
+    margin: 0 20px 0 20px;
+    color: black;
+}
+#ZD{
+    margin-left: 30px;
+}
+.card{
+    margin-left: 30px;
+}
+.contenedor-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }

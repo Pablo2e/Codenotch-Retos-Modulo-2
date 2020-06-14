@@ -1,0 +1,85 @@
+<!-- RETOS 
+Reto 1 Maquetar una Landing page de una agencia de viajes.
+Reto 2 Añadir un formulario a la Landing page
+Reto 3 Escribir una función en JavaScript que coja la información de los campos de textos y cuando se pulse el botón escriba esa información en formatoJSON. 
+Reto 4 Guardar toda la información de los formularios en un Array de JSON y filtrar todos los nombres que contengan la letra R -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travellers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio src="audio/mar.mp3" autoplay loop ></audio>
+    <nav class="menuH">
+        <a href="deportista.html">PLAYA</a>
+        <a href="entrenador.html">MONTAÑA</a>
+        <a href="docente.html">CRUCEROS</a>
+        <a href="rehabilitador.html">CIUDADES</a>
+        <a href="fullstack.html">RURAL</a>
+    </nav>
+    <div class="conten">
+        <h1>T R A V E L L E R S</h1>
+        <h4>Tu nueva agencia de viajes</h4>
+    </div>
+<div class="conten">
+        <!-- <h1 id="t">T R A V E L LE R S</h1> -->
+        <p>Contacta con nosotros</p>
+    <form action="" method="get">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name_user="nombre_usuario">
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name_user="email_usuario">
+        </div>
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje_usuario"></textarea>
+        </div>
+        <div class="boton">
+            <button type="submit" onclick="datosUsuario()">Envia tu mensaje</button>
+        </div>
+        <script>
+            var arrayJson=[] //asi se pueden almacenar todos los usuarios que quiera
+            datosUsuario=()=>{
+                let nombre = document.getElementById("nombre").value;
+                let email = document.getElementById("email").value;
+                let mensaje = document.getElementById("mensaje").value;
+                let jsonUsuario={"nombre":nombre, "email":email, "mensaje":mensaje};
+               /*  let pablo={"nombre":"Pablo","email":"pablo@pablo.com","mensaje":"Pablo"}
+                let raul={"nombre":"raul","email":"raul@raul.com","mensaje":"raul"}
+                let rita={"nombre":"Rita","email":"rita@rita.com","mensaje":"Rita"} */
+                let jsonString=JSON.stringify(jsonUsuario);
+                /* let jsonStringP=JSON.stringify(pablo);
+                let jsonStringRa=JSON.stringify(raul);
+                let jsonStringRi=JSON.stringify(rita); 
+                var arrayJson=[jsonStringP, jsonStringRa, jsonStringRi]*/ 
+                arrayJson.push(jsonString)
+                for (let i in arrayJson){
+                    if (!arrayJson[i].includes("R")) {
+                    alert(JSON.stringify(arrayJson[i]))
+                    }  
+                }
+             }
+        </script>
+    </form>
+</div>
+<nav class="menuF">
+    <a href="depor.html">Dirección: Gran Via 1, Madrid</a>
+    <a href="entre.html">Email: contacto@travellers.com</a>
+    <a href="doc.html">Telefono: (+34) 912345678</a>
+</nav>
+    <!-- <footer>
+        <p>Datos de contacto</p>
+        <p>Correo</p>
+        <p>Telefono</p>
+    </footer> -->
+
+
+    
+</body>
+</html>

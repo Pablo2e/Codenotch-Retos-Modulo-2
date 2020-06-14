@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./js/Professional.js" language="javascript" type="text/javascript"></script>
+    <script src="./js/Movie.js" language="javascript" type="text/javascript"></script>
+    <script src="./js/Imdb.js" language="javascript" type="text/javascript"></script>
+    <script src="scripts.js" language="javascript" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var bradP = new Professional("Brad Pitt", 56, "Hombre", 78, 180, "Rubio", "Azules", "Caucasico", "No", "EEUU", 2, "Actor", "https://es.wikipedia.org/wiki/Brad_Pitt#/media/Archivo:Brad_Pitt_2019_by_Glenn_Francis.jpg")
+        var morganF = new Professional("Morgan Freeman", 82, "Hombre", 79, 188, "Cano", "Marrones", "Afroamericano", "No", "EEUU", 1, "Actor", "https://es.wikipedia.org/wiki/Morgan_Freeman#/media/Archivo:Academy_Award-winning_actor_Morgan_Freeman_narrates_for_the_opening_ceremony_(26904746425)_(cropped).jpg")
+        var davidF = new Professional("David Fincher", 57, "Hombre", 78, 170, "Rubio", "Azules", "Caucasico", "No", "EEUU", 0, "Director", "https://es.wikipedia.org/wiki/David_Fincher#/media/Archivo:David_Fincher_(2012)_3.jpg")
+        var andrewW = new Professional("Andrew Kevin Walker", 56, "Hombre", 83, 174, "Rubio", "Azules", "Caucasico", "No", "EEUU", 0, "Escritor", "https://m.media-amazon.com/images/M/MV5BZTU1OGUyYTktZjgxNi00MDMyLTkyZGYtMWQ2OTg2N2U1OWRkXkEyXkFqcGdeQXVyODYzNDkyMDA@._V1_SY1000_SX1000_AL_.jpg")
+        var actores = new Array(bradP, morganF)
+        var seven = new Movie("Seven", 1995, "EE.UU", "Crime","https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,639,1000_AL_.jpg","Ingles", "Cine", "No" ,"Brad Pitt", actores, davidF, andrewW,"New Line Cinema","New Line Cinema")
+    </script>
+    <script>
+        
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("p").html(function(n){
+                return "Hello <b>world!</b>";
+            });
+            $("#myDiv").html(function(n){
+                return (seven.print());
+            });
+            $("img").html(function(n){
+                return ($("#myImg").attr("src", seven.getFoto() ))
+                //return '$("#inputFoto").val()'
+                });
+          });
+          $('#alternar-panel-oculto').toggle( /* Primer click. Función que descubre un panel oculto y cambia el texto del botón.  */
+     function(e){ 
+         $('#panel-oculto').slideDown();
+         $(this).text('Cerrar el panel');
+         e.preventDefault();
+     }, // Separamos las dos funciones con una coma
+  
+     /* Segundo click.Función que oculta el panel y vuelve a cambiar el texto del botón.*/
+     function(e){ 
+         $('#panel-oculto').slideUp();
+         $(this).text('Mostrar el panel oculto');
+         e.preventDefault();
+     });
+
+        });
+
+        </script>
+        </head>
+<body>
+    <div id="panel-oculto" style="display:none;"></div>
+    <a href="#" id="alternar-panel-oculto">Mostrar el panel oculto</a>
+    <!-- barra de navegación -->
+    <ul class="nav bg-dark">
+        <li class="nav-item">
+            <a class="nav-link" href="peliculas.html">PELICULAS</a>
+        </li>
+    </ul><br><br>
+<!-- Contenedor con el logo --> 
+    <div class="container text-white">
+        <div class="card border-0 shadow my-5 bg-dark ">
+               <div class="card-body p-5">
+                    <h1><b>UP/DOWN</b></h1>
+                <p>Base de datos colaborativa de peliculas copyleft.</p>
+            </div>
+        </div>
+    </div>
+<!-- Separador --> 
+    </div>
+        <div class="col-lg-4"></div>
+    </div><br><br>
+    <div class="row">
+        <div class="col-sm-6 col-md-3 col-lg-3">
+            <img src="img/matilda.jpg" class="card-img-top" alt="Matilda" id="myImg">   
+        </div>        
+        <div class="col-lg-9" id="myDiv">
+                    
+        </div>            
+    <div>
+                <button class="btn btn-primary" type="submit" id="matilda" onclick="datosMat()">+ Datos</button>
+            </div>
+    </div>
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+            <button>Change content of all p elements</button>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <form class="form-signin">
+                    <h4><b>Sube una pelicula</b></h4>
+                    
+                    <input type="text" id="inputFoto" class="form-control" placeholder="Link a la foto de caratula" autofocus>
+                    
+                    <button class="btn btn-lg btn-dark btn-block" type="submit" onclick="agregarPeli()">Agregar</button>
+                </form>
+            </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

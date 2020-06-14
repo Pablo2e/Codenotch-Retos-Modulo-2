@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" language="javascript" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    </head>
+<body>
+    <div class="container-fluid">
+        <div class="text-center py-5">
+            <h1>ZAPATILLAS ADIDAS</h1>
+            <p>Tu tienda deportiva. Venta online</p>
+        </div>
+    </div>
+    
+    <div class="row ">
+        <div class="col-lg-4">
+            <nav class="menuH">
+                <a href="deportista.html">HOMBRE</a>
+                <a href="entrenador.html">MUJER</a>
+                <a href="docente.html">NIÑOS</a>
+                <a href="rehabilitador.html">UNISEX</a>
+            </nav>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 bg-alert">
+        </div>
+    <div> <br>
+        
+    <div class="row" >
+        <div class="col-sm-12 col-md-6 col-lg-3">   
+            <div class="card"  >
+                <img src="img/ubB.jpg" class="card-img-top" alt="Adias Ultrabost">
+                <div class="card-body">
+                    <h5 class="card-title">Ultrabost 20</h5>
+                    <p class="card-text">CORE BLACK / BOOST BLUE VIOLET MET. / CLOUD WHITE</p>
+                    <p class="card-text">128€</p>
+                    <button class="btn btn-primary" type="submit" id="ubB" onclick="agregarubB()" value=128>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">   
+            <div class="card"  >
+                <img src="img/ubR.jpg" class="card-img-top" alt="Adias Ultrabost">
+                <div class="card-body">
+                    <h5 class="card-title">Ultrabost 20</h5>
+                    <p class="card-text">CORE BLACK / BOOST BLUE VIOLET MET. / CLOUD WHITE</p>
+                    <p class="card-text">150€</p>
+                    <button class="btn btn-primary" type="submit" id="ubR" onclick="agregarubR()" value=150>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">   
+            <div class="card"  >
+                <img src="img/ubT.jpg" class="card-img-top" alt="Adias Ultrabost">
+                <div class="card-body">
+                    <h5 class="card-title">Ultrabost 20</h5>
+                    <p class="card-text">CORE BLACK / BOOST BLUE VIOLET MET. / CLOUD WHITE</p>
+                    <p class="card-text">178€</p>
+                    <button class="btn btn-primary" type="submit" id="ubT" onclick="agregarubT()" value=178>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+      
+        <div class="col-sm-12 col-md-6 col-lg-3">   
+            <div class="card"  >
+                <img src="img/ubW.jpg" class="card-img-top" alt="Adias Ultrabost">
+                <div class="card-body">
+                    <h5 class="card-title">Ultrabost 20</h5>
+                    <p class="card-text">CORE BLACK / BOOST BLUE VIOLET MET. / CLOUD WHITE</p>
+                    <p class="card-text">149.96€</p>
+                    <button class="btn btn-primary" type="submit" id="ubW" onclick="agregarubW()" value=149.96>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="row" >
+        <div class="col-sm-12 col-md-6 col-lg-3">   
+            <div class="card"  >
+                <img src="img/sn.jpg" class="card-img-top" alt="Adias Ultrabost">
+                <div class="card-body">
+                    <h5 class="card-title">SOLAR GLIDE 19</h5>
+                    <p class="card-text">GREY SIX / CLOUD WHITE / SIGNAL CORAL</p>
+                    <p class="card-text">139.95€</p>
+                    <button class="btn btn-primary" type="submit" id="sn" onclick="agregarsn()" value=139.95>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">   
+            <div class="card"  >
+                <img src="img/so.jpg" class="card-img-top" alt="Adias Ultrabost">
+                <div class="card-body">
+                    <h5 class="card-title">SOLAR GLIDE 19</h5>
+                    <p class="card-text">CORE BLACK / GREY FIVE / CLOUD WHITE</p>
+                    <p class="card-text">139.95€</p>
+                    <button class="btn btn-primary" type="submit" id="so" onclick="agregarso()" value=139.95>Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+        
+<!--     </div> 
+    <div class="col-12 bg-primary text-center py-5">
+        <button class="btn btn-light" type="submit" id="ubB" onclick="mostrarTotal()" data-toggle="modal" data-target="#miModal">Total</button>
+    </div>
+    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Esto es un modal</h4>
+                </div>
+                <div class="modal-body">
+                    Mi modal
+                </div>
+            </div>
+        </div>
+    </div>  -->
+<div class="col-12 bg-primary text-center py-5">
+<button type="button"  onclick="mostrarTotal()" class="btn btn-light" data-toggle="modal" data-target="#basicExampleModal" id="tot">Total</button>                
+</div>
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" id="myDiv2">
+     <p id="p1">Hola</p>
+    </div>
+   <div class="modal-body" id="myDiv3">
+    <p id="p2">Hola</p>
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">PAGAR</button>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+    $("#tot").click(function(){
+        $("h5").html(function(n){
+            return "<b>Total a pagar</b>";
+            });
+        $("#myDiv2").html(function(n){
+            return (salida);
+        });
+        $("#myDiv3").html(function(n){
+            return ("Total: "+ final.toFixed(2)+ " €");
+        });
+   });
+});
+</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

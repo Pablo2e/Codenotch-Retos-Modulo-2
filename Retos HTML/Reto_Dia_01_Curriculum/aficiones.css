@@ -1,0 +1,27 @@
+/* pagina de estilos del aficiones.html */
+*{box-sizing: border-box;}
+body{
+    font-family: calibri;
+    background-color: #ffe4d9;
+}
+div{
+    padding: 10px;
+    
+}
+#caja{
+    background-color:white;
+    float: left;
+    width: 25%;
+    height: 800px;
+    border-style: solid;
+}
+img{
+    width: 200px;
+    height: 300px;
+}
+img:hover{
+    opacity: 20%;
+}
+h3{
+    text-align: center;
+}

@@ -1,0 +1,78 @@
+body{
+    background-color: rgb(0, 255, 255);
+}
+header{
+    background-color: rgb(0, 255, 255);
+    text-align: center;
+    padding: 20px
+}
+p{
+    padding: 10px;
+    padding-left: 145px;
+}
+#titulo{
+    padding: 10px 0px 0px 10px;
+}
+#ph{
+    padding: 10px 0px 10px 10px;
+}
+/* ul{
+    padding: 10px 0px 10px 10px;
+} */
+li{
+    list-style-type: square;
+}
+h3{
+    padding-left: 145px;
+}
+*{ font-family: calibri;
+    box-sizing: border-box;
+    margin:0px
+        
+}
+.menuH{
+    overflow: hidden;
+}
+
+.menuH a{
+    background-color:black;
+    color: rgb(0, 255, 255);
+    text-decoration: none;
+    float:left;
+    width: 16.666%;
+    text-align: center;
+    padding: 20px 0PX;
+    border:1px solid rgb(0, 255, 255);
+    
+}
+.menuH a:hover{
+    background-color:rgb(0, 255, 255);
+    color: black;
+    border:1px solid black;
+}
+.menuV{
+    float: left;
+    width: 140px;
+    overflow: hidden;
+    
+}
+.menuV a{
+    background-color:black;
+    color: rgb(0, 255, 255);
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    border:1px solid rgb(0, 255, 255);
+    text-align: center;
+}
+.menuV a:hover{
+    background-color:rgb(0, 255, 255);
+    color: black;
+    border:1px solid black;
+}
+footer{
+    background-color: rgb(0, 255, 255);
+    text-align: left;
+    padding: 10px;
+    clear: both;
+}

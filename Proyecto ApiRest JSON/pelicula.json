@@ -1,0 +1,68 @@
+{
+  "title": "Tsunami",
+  "releaseYear": 2020,
+  "nationality": "EE.UU",
+  "genre": "Terror",
+  "actors": [
+    {
+      "name": "Roberto Martinez",
+      "age": 60,
+      "genre": "male",
+      "weight": 80,
+      "height": 180,
+      "hairColor": "black",
+      "eyeColor": "brown",
+      "race": "asian",
+      "isRetired": "yes",
+      "nationality": "España",
+      "oscarsNumber": 0,
+      "profession": "actor",
+      "photo": "http//:foto.jpg"
+    },
+    {
+      "name": "Paul Adams",
+      "age": 30,
+      "genre": "male",
+      "weight": 80,
+      "height": 170,
+      "hairColor": "brown",
+      "eyeColor": "blue",
+      "race": "caucasian",
+      "isRetired": "yes",
+      "nationality": "USA",
+      "oscarsNumber": 2,
+      "profession": "actor",
+      "photo": "http//:foto.jpg"
+    }
+  ],
+  "director": {
+    "name": "Carlos Guerra",
+    "age": 30,
+    "genre": "male",
+    "weight": 80,
+    "height": 180,
+    "hairColor": "brown",
+    "eyeColor": "blue",
+    "race": "hispanic",
+    "isRetired": "yes",
+    "nationality": "Mexican",
+    "oscarsNumber": 2,
+    "profession": "director",
+    "photo": "http//:foto.jpg"
+  },
+  "writer": {
+    "name": "Carlos Rodriguez",
+    "age": 30,
+    "genre": "male",
+    "weight": 80,
+    "height": 180,
+    "hairColor": "brown",
+    "eyeColor": "blue",
+    "race": "hispanic",
+    "isRetired": "yes",
+    "nationality": "Mexican",
+    "oscarsNumber": 2,
+    "profession": "actor",
+    "photo": "http//:foto.jpg"
+  }
+}

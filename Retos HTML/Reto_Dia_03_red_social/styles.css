@@ -1,0 +1,87 @@
+
+body{
+    background-color: white;
+    font-family: calibri;
+}
+
+header{
+    background-color: #4867aa;
+    height: 70px;
+}
+img{
+    margin: 18px 5px 0 30px;
+    width: 200px;
+    float:left;
+
+}
+button{
+    background-color: #42b72a;
+    margin-top: 22px;
+    color: white;
+    height: 40px;
+}
+#celeste{
+    background-color: #e9ebee;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+.centro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 400px;
+   }
+#izq{
+    height: 200px;
+    width: 400px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    float:right;
+}
+#contenedor{
+    position: absolute;
+    background-color: white;
+    margin-top: 20px;
+    width: 400px;
+}
+#logIn{
+    background-color: #4867aa;
+    width: 175px; 
+    height: 25px; 
+}
+#eOPn, #contraseña{
+    margin-left: 60px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+    border: 1px solid rgb(203, 203, 206);
+}
+nav{
+    margin-top: 10px;
+}
+a{
+    text-decoration: none;
+    width: 50%;
+    text-align: center;
+    padding:10px ;
+}
+@media only screen and (max-width:320px)
+{
+    body{
+        background-color: #42b72a;
+    }
+    button{
+        background-color: #42b72a;
+        margin-top: 2px;
+        color: white;
+        height: 20px;
+    }
+}
