@@ -14,7 +14,7 @@ connection.connect(function(error){
 
 //Reto 2
 //Setear todas las notas de los alumnos a 0
-/* let sql = "UPDATE marks SET MARK=0";
+let sql = "UPDATE marks SET mark=0";
 connection.query(sql, function(err, result){
     if (err){
         console.log(err)
@@ -22,7 +22,7 @@ connection.query(sql, function(err, result){
         console.log('Dato insertado')
         console.log(result)
     }
-}) */
+}) 
 //Obtener el nombre y el primer apellido de todos los estudiantes
 let sql = "SELECT first_name, last_name FROM students";
 connection.query(sql, function(err, result){
@@ -34,7 +34,7 @@ connection.query(sql, function(err, result){
     }
 }) 
 //Obtener todos los datos de los profesores.
-/* let sql = "SELECT * FROM teachers";
+let sql = "SELECT * FROM teachers";
 connection.query(sql, function(err, result){
     if (err){
         console.log(err)
@@ -42,4 +42,4 @@ connection.query(sql, function(err, result){
         console.log('Dato obtenido')
         console.log(result)
     }
-}) */
+}) 
