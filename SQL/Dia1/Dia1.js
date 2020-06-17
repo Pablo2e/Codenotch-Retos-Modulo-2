@@ -62,7 +62,7 @@ connection.query(sql, function (err, result){
         console.log(result)
     }
 }) */
-//Borro la tabla Alumnos
+//Borro la tabla Alumnos //no la puedo borrar porque tiene FOREIGN KEYS y habría que borrar las otras tambien
 let sql = ' DROP TABLE Alumnos';
 connection.query(sql, function (err, result){
     if(err)
