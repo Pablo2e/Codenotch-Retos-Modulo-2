@@ -39,7 +39,7 @@ connection.query(sql, function(err, result){
 
 //Reto 6
 //Obtener el número total de elementos de una tabla.
-/* let sql = "SELECT count(student_id) FROM students";
+/* let sql = "SELECT count(*) FROM students";
 connection.query(sql, function(err, result){
     if (err){
         console.log(err)
