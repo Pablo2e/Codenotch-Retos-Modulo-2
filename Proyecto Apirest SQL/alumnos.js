@@ -47,8 +47,9 @@ app.get("/alumnos", function (request, response) {
 });
 //Post
 app.post("/alumnos", function (request, response) {
-    let sql = "INSERT INTO students (student_id, first_name, last_name, group_id, año_ingreso) VALUES ( null, 'Jose', 'Saez', 1, '2020-06-17')";
-    connection.query(sql, function(err, result){
+    let params = new Array('null', 'Jose', 'Saez', '1', '2020-06-17')
+    let sql = "INSERT INTO students (student_id, first_name, last_name, group_id, año_ingreso) VALUES ( ?, ?, ?, ?, ?)";
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -61,9 +62,10 @@ app.post("/alumnos", function (request, response) {
 });
 //Put
 app.put("/alumnos/:id", function (request, response) {
+    let params = new Array('Hernan', 'Roca')
     var id = request.params.id;
-    let sql = "UPDATE students SET first_name = 'Hernan', last_name = 'Roca' WHERE student_id ="+id;
-    connection.query(sql, function(err, result){
+    let sql = "UPDATE students SET first_name = ?, last_name = ? WHERE student_id ="+id;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{

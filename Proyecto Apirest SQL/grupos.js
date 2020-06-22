@@ -47,8 +47,9 @@ app.get("/grupos", function (request, response) {
 });
 //Post
 app.post("/grupos", function (request, response) {
-    let sql = "INSERT INTO groups (group_id, name) VALUES ( null, 'codenotch_OTOÑO_2021')";
-    connection.query(sql, function(err, result){
+    let params = new Array('null', 'codenotch_OTOÑO_2021')
+    let sql = "INSERT INTO groups (group_id, name) VALUES ( ?, ?)";
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -61,9 +62,10 @@ app.post("/grupos", function (request, response) {
 });
 //Put
 app.put("/grupos/:id", function (request, response) {
+    let params = new Array('codenotch_otoño_2021')
     var id = request.params.id;
-    let sql = "UPDATE groups SET name = 'codenotch_otoño_2021' WHERE group_id ="+id;
-    connection.query(sql, function(err, result){
+    let sql = "UPDATE groups SET name = ? WHERE group_id ="+id;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{

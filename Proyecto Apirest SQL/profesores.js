@@ -47,8 +47,9 @@ app.get("/profesores", function (request, response) {
 });
 //Post
 app.post("/profesores", function (request, response) {
-    let sql = "INSERT INTO teachers (teacher_id, first_name, last_name) VALUES ( null, 'Jose', 'Saez')";
-    connection.query(sql, function(err, result){
+    let params = new Array('null', 'Jose', 'Saez')
+    let sql = "INSERT INTO teachers (teacher_id, first_name, last_name) VALUES ( ?, ?, ?)";
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -61,9 +62,10 @@ app.post("/profesores", function (request, response) {
 });
 //Put
 app.put("/profesores/:id", function (request, response) {
+    let params = new Array('Hernan','Roca')
     var id = request.params.id;
-    let sql = "UPDATE teachers SET first_name = 'Hernan', last_name = 'Roca' WHERE teacher_id ="+id;
-    connection.query(sql, function(err, result){
+    let sql = "UPDATE teachers SET first_name = ?, last_name = ? WHERE teacher_id ="+id;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{

@@ -47,8 +47,9 @@ app.get("/notas", function (request, response) {
 });
 //Post
 app.post("/notas", function (request, response) {
-    let sql = "INSERT INTO marks (mark_id, student_id, subject_id, date, mark) VALUES ( null, 16, 6, '2019-06-12',8)";
-    connection.query(sql, function(err, result){
+    let params = new Array("null", "16", "6", "2019-06-12","8")
+    let sql = "INSERT INTO marks (mark_id, student_id, subject_id, date, mark) VALUES (?, ?, ?, ?,?)";
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -61,9 +62,10 @@ app.post("/notas", function (request, response) {
 });
 //Put
 app.put("/notas/:id", function (request, response) {
+    let params = new Array('5','2019-06-12','3')
     var id = request.params.id;
-    let sql = "UPDATE marks SET subject_id=5, date='2019-06-12', mark=3 WHERE mark_id ="+id;
-    connection.query(sql, function(err, result){
+    let sql = "UPDATE marks SET subject_id=?, date=?, mark=? WHERE mark_id ="+id;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{

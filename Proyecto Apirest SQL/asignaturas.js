@@ -47,8 +47,9 @@ app.get("/asignaturas", function (request, response) {
 });
 //Post
 app.post("/asignaturas", function (request, response) {
-    let sql = "INSERT INTO subjects (subject_id, title) VALUES ( null, 'React')";
-    connection.query(sql, function(err, result){
+    let params = new Array('null', 'React')
+    let sql = "INSERT INTO subjects (subject_id, title) VALUES ( ?, ?)";
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -61,9 +62,10 @@ app.post("/asignaturas", function (request, response) {
 });
 //Put
 app.put("/asignaturas/:id", function (request, response) {
+    let params = new Array('SASS')
     var id = request.params.id;
-    let sql = "UPDATE subjects SET title = 'SASS' WHERE subject_id ="+id;
-    connection.query(sql, function(err, result){
+    let sql = "UPDATE subjects SET title = ? WHERE subject_id ="+id;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
