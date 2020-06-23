@@ -45,8 +45,23 @@ app.get("/profesionales", function (request, response) {
 });
 //Post
 app.post("/profesionales", function (request, response) {
-    let sql = `INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES (${request.body.profesional_id}, "${request.body.nombre}", ${request.body.edad}, "${request.body.genero}", ${request.body.peso}, ${request.body.altura}, "${request.body.color_pelo}", "${request.body.color_ojos}", "${request.body.raza}", "${request.body.retirado}", "${request.body.nacionalidad}", ${request.body.n_oscars}, "${request.body.profesion}", "${request.body.foto}")`;
-    connection.query(sql, function(err, result){
+    let profesional_id = request.body.profesional_id
+    let nombre = request.body.nombre
+    let edad = request.body.edad
+    let genero = request.body.genero
+    let peso = request.body.peso
+    let altura = request.body.altura
+    let color_pelo = request.body.color_pelo
+    let color_ojos = request.body.color_ojos
+    let raza = request.body.raza
+    let retirado = request.body.retirado
+    let nacionalidad = request.body.nacionalidad
+    let n_oscars = request.body.n_oscars
+    let profesion = request.body.profesion
+    let foto = request.body.foto
+    let params = [profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto]
+    let sql = `INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -58,8 +73,23 @@ app.post("/profesionales", function (request, response) {
 });
 //Put
 app.put("/profesionales", function (request, response) {
-    let sql = `UPDATE profesional SET nombre= "${request.body.nombre}", edad= ${request.body.edad}, genero= "${request.body.genero}", peso= ${request.body.peso}, altura= ${request.body.altura}, color_pelo= "${request.body.color_pelo}", color_ojos= "${request.body.color_ojos}", raza= "${request.body.raza}", retirado= "${request.body.retirado}", nacionalidad= "${request.body.nacionalidad}", n_oscars= ${request.body.n_oscars}, profesion= "${request.body.profesion}", foto= "${request.body.foto}" WHERE profesional_id =${request.body.profesional_id}`;
-    connection.query(sql,  function(err, result){
+    let profesional_id = request.body.profesional_id
+    let nombre = request.body.nombre
+    let edad = request.body.edad
+    let genero = request.body.genero
+    let peso = request.body.peso
+    let altura = request.body.altura
+    let color_pelo = request.body.color_pelo
+    let color_ojos = request.body.color_ojos
+    let raza = request.body.raza
+    let retirado = request.body.retirado
+    let nacionalidad = request.body.nacionalidad
+    let n_oscars = request.body.n_oscars
+    let profesion = request.body.profesion
+    let foto = request.body.foto
+    let params = [nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto, profesional_id]
+    let sql = `UPDATE profesional SET nombre=?, edad=?, genero=?, peso=?, altura=?, color_pelo=?, color_ojos=?, raza=?, retirado=?, nacionalidad=?, n_oscars=?, profesion=?, foto=? WHERE profesional_id =?`;
+    connection.query(sql, params,  function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -71,8 +101,10 @@ app.put("/profesionales", function (request, response) {
 }); 
 //Delete
 app.delete("/profesionales", function (request, response) {
-    let sql = `DELETE FROM profesional WHERE profesional_id =${request.body.profesional_id}`;
-    connection.query(sql, function(err, result){
+    let profesional_id = request.body.profesional_id;
+    let params = profesional_id
+    let sql = `DELETE FROM profesional WHERE profesional_id =?`;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{

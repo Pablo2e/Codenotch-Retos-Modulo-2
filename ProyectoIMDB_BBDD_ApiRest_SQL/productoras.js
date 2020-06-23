@@ -45,8 +45,13 @@ app.get("/productoras", function (request, response) {
 });
 //Post
 app.post("/productoras", function (request, response) {
-    let sql = `INSERT INTO productora (productora_id, nombre, año_creacion, pais_origen) VALUES (${request.body.productora_id}, "${request.body.nombre}", ${request.body.año_creacion}, "${request.body.pais_origen}")`;
-    connection.query(sql, function(err, result){
+    let productora_id = request.body.productora_id;
+    let nombre = request.body.nombre;
+    let año_creacion = request.body.año_creacion;
+    let pais_origen = request.body.pais_origen;
+    let params = [productora_id, nombre, año_creacion, pais_origen]
+    let sql = "INSERT INTO productora (productora_id, nombre, año_creacion, pais_origen) VALUES (?,?,?,?)";
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -58,8 +63,13 @@ app.post("/productoras", function (request, response) {
 });
 //Put
 app.put("/productoras", function (request, response) {
-    let sql = `UPDATE productora SET nombre= "${request.body.nombre}", año_creacion= ${request.body.año_creacion}, pais_origen= "${request.body.pais_origen}" WHERE productora_id =${request.body.productora_id}`;
-    connection.query(sql,  function(err, result){
+    let productora_id = request.body.productora_id;
+    let nombre = request.body.nombre;
+    let año_creacion = request.body.año_creacion;
+    let pais_origen = request.body.pais_origen;
+    let params = [nombre, año_creacion, pais_origen, productora_id]
+    let sql = `UPDATE productora SET nombre= ?, año_creacion= ?, pais_origen= ? WHERE productora_id =?`;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -71,8 +81,10 @@ app.put("/productoras", function (request, response) {
 }); 
 //Delete
 app.delete("/productoras", function (request, response) {
-    let sql = `DELETE FROM productora WHERE productora_id =${request.body.productora_id}`;
-    connection.query(sql, function(err, result){
+    let productora_id = request.body.productora_id;
+    let params = productora_id
+    let sql = `DELETE FROM productora WHERE productora_id =?`;
+    connection.query(sql, params, function(err, result){
         if (err){
             console.log(err)
         }else{
