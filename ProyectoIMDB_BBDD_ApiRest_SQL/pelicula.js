@@ -97,9 +97,8 @@ app.get("/pelicula/productora/Pelicula/:id", function (request, response) {
 });
 //Post
 app.post("/peliculas", function (request, response) {
-    let params = new Array('null', 'Minimo', '2020', 'Española', 'Español', 'Cine', 'No', 'Carlos Perez', '2', 'El Deseo', 'Comedia')
-    let sql = "INSERT INTO pelicula (pelicula_id, titulo, año_lanzamiento, nacionalidad, idioma, plataforma, esMCU, nombre_protagonista, productora_id, distribuidora, genero) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, result){
+    let sql = `INSERT INTO pelicula (pelicula_id, titulo, año_lanzamiento, nacionalidad, idioma, plataforma, esMCU, nombre_protagonista, productora_id, distribuidora, genero) VALUES (${request.body.pelicula_id}, "${request.body.titulo}", ${request.body.año_lanzamiento}, "${request.body.nacionalidad}", "${request.body.idioma}", "${request.body.plataforma}", "${request.body.esMCU}", "${request.body.nombre_protagonista}", ${request.body.productora_id}, "${request.body.distribuidora}", "${request.body.genero}")`;
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -110,9 +109,8 @@ app.post("/peliculas", function (request, response) {
     })
 });
 app.post("/pelicula/actor", function (request, response) {
-    let params = new Array('null', 'Jennifer Aniston', '50', 'Femenino', '60', '170', 'Rubio', 'Azules', 'Caucasico', 'No', 'EEUU', '0', 'Actriz',"http://foto1.jpg")
-    let sql = "INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, result){
+    let sql = `INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES (${request.body.profesional_id}, "${request.body.nombre}", ${request.body.edad}, "${request.body.genero}", ${request.body.peso}, ${request.body.altura}, "${request.body.color_pelo}", "${request.body.color_ojos}", "${request.body.raza}", "${request.body.retirado}", "${request.body.nacionalidad}", ${request.body.n_oscars}, "${request.body.profesion}", "${request.body.foto}")`;
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -123,9 +121,8 @@ app.post("/pelicula/actor", function (request, response) {
     })
 });
 app.post("/pelicula/director", function (request, response) {
-    let params = new Array('null', 'Steven Spielverg', '70', 'Masculino', '90', '170', 'Rubio', 'Azules', 'Caucasico', 'No', 'EEUU', '2', 'Director',"http://foto1.jpg")
-    let sql = "INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, result){
+    let sql = `INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES (${request.body.profesional_id}, "${request.body.nombre}", ${request.body.edad}, "${request.body.genero}", ${request.body.peso}, ${request.body.altura}, "${request.body.color_pelo}", "${request.body.color_ojos}", "${request.body.raza}", "${request.body.retirado}", "${request.body.nacionalidad}", ${request.body.n_oscars}, "${request.body.profesion}", "${request.body.foto}")`;
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -136,9 +133,8 @@ app.post("/pelicula/director", function (request, response) {
     })
 });
 app.post("/pelicula/guionista", function (request, response) {
-    let params = new Array('null', 'María Hernandez', '50', 'Femenino', '60', '170', 'Rubio', 'Azules', 'Caucasico', 'No', 'España', '0', 'Guionista',"http://foto1.jpg")
-    let sql = "INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, result){
+    let sql = `INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES (${request.body.profesional_id}, "${request.body.nombre}", ${request.body.edad}, "${request.body.genero}", ${request.body.peso}, ${request.body.altura}, "${request.body.color_pelo}", "${request.body.color_ojos}", "${request.body.raza}", "${request.body.retirado}", "${request.body.nacionalidad}", ${request.body.n_oscars}, "${request.body.profesion}", "${request.body.foto}")`;
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -149,70 +145,64 @@ app.post("/pelicula/guionista", function (request, response) {
     })
 });
 //Put
- app.put("/peliculas/:id", function (request, response) {
-    let params = new Array('Furtivos', '2020', 'Española', 'Español', 'Cine', 'No', 'Carlos Perez', '2', 'El Deseo', 'Comedia')
-    var id = request.params.id;
-    let sql = "UPDATE pelicula SET titulo=?, año_lanzamiento=?, nacionalidad=?, idioma=?, plataforma=?, esMCU=?, nombre_protagonista=?, productora_id=?, distribuidora=?, genero=? WHERE pelicula_id ="+id;
-    connection.query(sql, params, function(err, result){
+ app.put("/peliculas", function (request, response) {
+    let sql = `UPDATE pelicula SET titulo="${request.body.titulo}", año_lanzamiento=${request.body.año_lanzamiento}, nacionalidad="${request.body.nacionalidad}", idioma="${request.body.idioma}", plataforma="${request.body.plataforma}", esMCU="${request.body.esMCU}", nombre_protagonista="${request.body.nombre_protagonista}", productora_id=${request.body.productora_id}, distribuidora="${request.body.distribuidora}", genero="${request.body.genero}" WHERE pelicula_id =${request.body.pelicula_id}`;
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: 'Profesional Modificado', resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: 'Pelicula Modificada', resultado: result };
     response.send(respuesta);
     })
 }); 
 //Delete
-app.delete("/pelicula/:id", function (request, response) {
-    var id = request.params.id;
-    let sql = "DELETE FROM pelicula WHERE pelicula_id ="+id;
+app.delete("/peliculas", function (request, response) {
+    let sql = `DELETE FROM pelicula WHERE pelicula_id = ${request.body.pelicula_id}`;
     connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: `Pelicula ${id} borrada`, resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: `Pelicula borrada`, resultado: result };
     response.send(respuesta);
     })
 });
-app.delete("/pelicula/actor/:id", function (request, response) {
-    var id = request.params.id;
-    let sql = "DELETE FROM profesional WHERE profesional_id ="+id;
+app.delete("/pelicula/actor", function (request, response) {
+    let sql = `DELETE FROM profesional WHERE profesional_id =${request.body.profesional_id}`;
     connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: `Actor ${id} borrado`, resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: `Actor borrado`, resultado: result };
     response.send(respuesta);
     })
 });
-app.delete("/pelicula/director/:id", function (request, response) {
-    var id = request.params.id;
-    let sql = "DELETE FROM profesional WHERE profesional_id ="+id;
+app.delete("/pelicula/director", function (request, response) {
+    let sql = `DELETE FROM profesional WHERE profesional_id =${request.body.profesional_id}`;
     connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: `Director ${id} borrado`, resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: `Director borrado`, resultado: result };
     response.send(respuesta);
     })
 });
-app.delete("/pelicula/guionista/:id", function (request, response) {
-    var id = request.params.id;
-    let sql = "DELETE FROM profesional WHERE profesional_id ="+id;
+app.delete("/pelicula/guionista", function (request, response) {
+    let sql = `DELETE FROM profesional WHERE profesional_id =${request.body.profesional_id}`;
     connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: `Guionista ${id} borrado`, resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: `Guionista borrado`, resultado: result };
     response.send(respuesta);
     })
 });

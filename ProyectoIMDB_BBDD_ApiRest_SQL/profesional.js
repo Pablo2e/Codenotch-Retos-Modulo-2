@@ -45,9 +45,8 @@ app.get("/profesionales", function (request, response) {
 });
 //Post
 app.post("/profesionales", function (request, response) {
-    let params = new Array('null', 'Jennifer Aniston', '50', 'Femenino', '60', '170', 'Rubio', 'Azules', 'Caucasico', 'No', 'EEUU', '0', 'Actriz',"http://foto1.jpg")
-    let sql = "INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, result){
+    let sql = `INSERT INTO profesional (profesional_id, nombre, edad, genero, peso, altura, color_pelo, color_ojos, raza, retirado, nacionalidad, n_oscars, profesion, foto) VALUES (${request.body.profesional_id}, "${request.body.nombre}", ${request.body.edad}, "${request.body.genero}", ${request.body.peso}, ${request.body.altura}, "${request.body.color_pelo}", "${request.body.color_ojos}", "${request.body.raza}", "${request.body.retirado}", "${request.body.nacionalidad}", ${request.body.n_oscars}, "${request.body.profesion}", "${request.body.foto}")`;
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -58,11 +57,9 @@ app.post("/profesionales", function (request, response) {
     })
 });
 //Put
-app.put("/profesionales/:id", function (request, response) {
-    let params = new Array('Megan Fox', '40', 'Femenino', '50', '160', 'Rubio', 'Azules', 'Caucasico', 'No', 'EEUU', '0', 'Actriz','http://foto1.jpg')
-    var id = request.params.id;
-    let sql = "UPDATE profesional SET nombre= ?, edad= ?, genero= ?, peso= ?, altura= ?, color_pelo= ?, color_ojos= ?, raza= ?, retirado= ?, nacionalidad= ?, n_oscars= ?, profesion= ?, foto= ? WHERE profesional_id ="+id;
-    connection.query(sql, params, function(err, result){
+app.put("/profesionales", function (request, response) {
+    let sql = `UPDATE profesional SET nombre= "${request.body.nombre}", edad= ${request.body.edad}, genero= "${request.body.genero}", peso= ${request.body.peso}, altura= ${request.body.altura}, color_pelo= "${request.body.color_pelo}", color_ojos= "${request.body.color_ojos}", raza= "${request.body.raza}", retirado= "${request.body.retirado}", nacionalidad= "${request.body.nacionalidad}", n_oscars= ${request.body.n_oscars}, profesion= "${request.body.profesion}", foto= "${request.body.foto}" WHERE profesional_id =${request.body.profesional_id}`;
+    connection.query(sql,  function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -73,16 +70,15 @@ app.put("/profesionales/:id", function (request, response) {
     })
 }); 
 //Delete
-app.delete("/profesionales/:id", function (request, response) {
-    var id = request.params.id;
-    let sql = "DELETE FROM profesional WHERE profesional_id ="+id;
+app.delete("/profesionales", function (request, response) {
+    let sql = `DELETE FROM profesional WHERE profesional_id =${request.body.profesional_id}`;
     connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: `Profesional ${id} borrado`, resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: `Profesional borrado`, resultado: result };
     response.send(respuesta);
     })
 });

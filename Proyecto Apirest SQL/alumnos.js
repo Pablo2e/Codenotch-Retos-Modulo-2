@@ -47,9 +47,8 @@ app.get("/alumnos", function (request, response) {
 });
 //Post
 app.post("/alumnos", function (request, response) {
-    let params = new Array('null', 'Jose', 'Saez', '1', '2020-06-17')
-    let sql = "INSERT INTO students (student_id, first_name, last_name, group_id, año_ingreso) VALUES ( ?, ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, result){
+    let sql = `INSERT INTO students (student_id, first_name, last_name, group_id, año_ingreso) VALUES(${request.body.student_id},"${request.body.first_name}","${request.body.last_name}",${request.body.group_id},${request.body.año_ingreso})`; 
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -61,25 +60,8 @@ app.post("/alumnos", function (request, response) {
     })
 });
 //Put
-app.put("/alumnos/:id", function (request, response) {
-    let params = new Array('Hernan', 'Roca')
-    var id = request.params.id;
-    let sql = "UPDATE students SET first_name = ?, last_name = ? WHERE student_id ="+id;
-    connection.query(sql, params, function(err, result){
-        if (err){
-            console.log(err)
-        }else{
-            console.log('Dato a mostrar')
-            console.log(result)
-        } 
-    var respuesta = { error: false, codigo: 200, Mensaje: 'Alumnos', resultado: result };
-    response.send(respuesta);
-    })
-}); 
-//Delete
-app.delete("/alumnos/:id", function (request, response) {
-    var id = request.params.id;
-    let sql = "DELETE FROM students WHERE student_id ="+id;
+app.put("/alumnos", function (request, response) {
+    let sql = `UPDATE students SET first_name = "${request.body.first_name}", last_name = "${request.body.last_name}", group_id = ${request.body.group_id}, año_ingreso = ${request.body.año_ingreso} WHERE student_id = ${request.body.student_id}`;
     connection.query(sql, function(err, result){
         if (err){
             console.log(err)
@@ -87,7 +69,21 @@ app.delete("/alumnos/:id", function (request, response) {
             console.log('Dato a mostrar')
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: `Alumno ${id} borrado`, resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: 'Alumno corregido', resultado: result };
+    response.send(respuesta);
+    })
+}); 
+//Delete
+app.delete("/alumnos", function (request, response) {
+    let sql = `DELETE FROM students WHERE student_id = ${request.body.student_id}`;
+    connection.query(sql, function(err, result){
+        if (err){
+            console.log(err)
+        }else{
+            console.log('Dato a mostrar')
+            console.log(result)
+        } 
+    var respuesta = { error: false, codigo: 200, Mensaje: `Alumno borrado`, resultado: result };
     response.send(respuesta);
     })
 });

@@ -45,9 +45,8 @@ app.get("/productoras", function (request, response) {
 });
 //Post
 app.post("/productoras", function (request, response) {
-    let params = new Array('null', 'Columbia', '1950', 'EEUU')
-    let sql = "INSERT INTO productora (productora_id, nombre, año_creacion, pais_origen) VALUES ( ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, result){
+    let sql = `INSERT INTO productora (productora_id, nombre, año_creacion, pais_origen) VALUES (${request.body.productora_id}, "${request.body.nombre}", ${request.body.año_creacion}, "${request.body.pais_origen}")`;
+    connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -58,11 +57,9 @@ app.post("/productoras", function (request, response) {
     })
 });
 //Put
-app.put("/productoras/:id", function (request, response) {
-    let params = new Array('Nikkei', '2000', 'Japon')
-    var id = request.params.id;
-    let sql = "UPDATE productora SET nombre= ?, año_creacion= ?, pais_origen= ? WHERE productora_id ="+id;
-    connection.query(sql, params, function(err, result){
+app.put("/productoras", function (request, response) {
+    let sql = `UPDATE productora SET nombre= "${request.body.nombre}", año_creacion= ${request.body.año_creacion}, pais_origen= "${request.body.pais_origen}" WHERE productora_id =${request.body.productora_id}`;
+    connection.query(sql,  function(err, result){
         if (err){
             console.log(err)
         }else{
@@ -73,16 +70,15 @@ app.put("/productoras/:id", function (request, response) {
     })
 }); 
 //Delete
-app.delete("/productoras/:id", function (request, response) {
-    var id = request.params.id;
-    let sql = "DELETE FROM productora WHERE productora_id ="+id;
+app.delete("/productoras", function (request, response) {
+    let sql = `DELETE FROM productora WHERE productora_id =${request.body.productora_id}`;
     connection.query(sql, function(err, result){
         if (err){
             console.log(err)
         }else{
             console.log(result)
         } 
-    var respuesta = { error: false, codigo: 200, Mensaje: `Productora ${id} borrada`, resultado: result };
+    var respuesta = { error: false, codigo: 200, Mensaje: `Productora borrada`, resultado: result };
     response.send(respuesta);
     })
 });
