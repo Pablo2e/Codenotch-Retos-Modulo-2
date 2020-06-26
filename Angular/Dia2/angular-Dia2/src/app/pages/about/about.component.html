@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>AUTORES Y SUS DATOS</h1>
+  <div class = "clase2">
+    Nombre: {{autor1.nombre}} <br>
+    Apellido: {{autor1.apellido}}<br>  
+    Edad: {{autor1.edad}}<br> 
+    Bibiliografia: {{autor1.bibiliografia}}
+  </div>
+  <hr>
+  <div class = {{miClase}}>Cambiando la clase con doble llaves</div>
+  <div [class] = "miClase">Cambiando la clase con corchetes y comillas dobles</div>
+  <hr>
+  <div hidden = {{escondido}}>Escondiendo/Mostrando al autor2 con doble llaves</div>
+  <div [hidden] = "escondido">Escondiendo/Mostrando al autor3 con corchetes y comillas dobles</div>
+  <hr>
+  <div>
+    <h3 class = "clase1">Concatenando datos de los autores</h3>
+    Nombre, Apellido, Edad y Bibliografia: El autor {{autor1.nombre}} {{autor1.apellido}} tiene {{autor1.edad}} años y ha escrito los siguientes libros: {{autor1.bibiliografia}}
+  </div>
+  <hr>
+  <div>
+      Pedir nombre de un autor con corchetes y comillas dobles<input type="text" [value]="autor2.nombre"/> <br>
+      Pedir nombre de un autor con llaves dobles <input type="text" value="{{autor2.nombre}}"/> <br>
+  </div>
+  <hr>
+  <h3>Cambiar datos con HTMLInputElement y .value desde el metodo enviar con 2 diferentes tipos del mismo evento</h3>
+  <div>
+    <input type="text" #boton1 class = "clase4">
+    <button (click)=enviar(boton1) class = "clase3">Cambiar el nombre al autor con (click)</button><br>
+    <input type="text" #boton2 class = "clase4">
+    <button on-click=enviar(boton2) class = "clase3">Cambiar el nombre al autor con on-click</button>
+  </div>
+  <hr>
+  <h3>Cambiar datos con string desde el metodo enviar y .value en la etiqueta boton con 2 diferentes tipos del mismo evento</h3>
+  <div>
+    <input type="text" #boton3 class = "clase4">
+    <button (click)=enviar2(boton3.value) class = "clase3">Cambiar el nombre al autor con click</button><br>
+    <input type="text" #boton4 class = "clase4">
+    <button on-click=enviar2(boton4.value) class = "clase3">Cambiar el nombre al autor con on-click</button>
+  </div>
+  <hr>
+  <h1>RETO 2</h1>
+  <div>
+    Pedir nombre de un autor con corchetes y comillas dobles<input type="text" [value]="autor2.nombre"/> <br><br>
+    Pedir nombre de un autor con llaves dobles <input type="text" value="{{autor2.nombre}}"/> <br><br>
+    <button on-click=enviarXautor(boton5.value) class = "clase3">Ver el nombre al autor</button>
+    <input type="text" #boton5 class = "clase4">
+    <hr>
+    <div>
+    <input type="text" [(ngModel)]="autor1.nombre"/>{{autor1.nombre}}
+    </div>
+</div>
+</body>
+</html>
