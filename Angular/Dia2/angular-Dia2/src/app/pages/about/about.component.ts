@@ -15,7 +15,7 @@ export class AboutComponent implements OnInit {
   public miColor: string;
   public escondido: boolean;
   
-  constructor() {
+  constructor() { //si quiero que aparezca directamente cuando se abra la pagina tiene que estar en el constructor los valores del autor1
     this.autor1 = new Autor("Stephen", "King", 72, ["La Niebla", "El Resplandor"])
     this.autor2 = new Autor("Dan", "Brown", 56, ["Ángeles y demonios", "El código Da Vinci"])
     this.autor3 = new Autor("George", "Martin", 71, ["Canción de hielo y fuego ", "Juego de tronos"])
