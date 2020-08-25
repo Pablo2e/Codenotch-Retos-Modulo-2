@@ -257,27 +257,6 @@ app.post("/pelicula/guionista", function (request, response) {
     })
 }); 
 //Delete
-/* app.delete("/peliculas", function (request, response) {
-    let pelicula_id = request.body.pelicula_id;
-    let params = pelicula_id
-    let sql = `DELETE FROM profesionales_pelicula WHERE pelicula_id=?`; 
-    connection.query(sql, params, function(err, result){
-        if (err){
-            console.log(err)
-        }else{
-            let sql2 = `DELETE FROM pelicula WHERE pelicula_id =?`;
-            connection.query(sql2, params, function(err, resultado){
-                if (err){
-                    console.log(err)
-                }else{
-                    console.log(resultado)
-                var respuesta2 = { error: false, codigo: 200, Mensaje: 'Pelicula y sus relaciones borradas', resultado: result };
-                response.send(respuesta2);    
-                } 
-            })    
-        }
-    })
-}); */ //CON EL ON DELETE CASCADE
 app.delete("/peliculas", function (request, response) {
     let pelicula_id = request.body.pelicula_id;
     let params = pelicula_id
